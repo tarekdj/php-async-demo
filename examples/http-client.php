@@ -26,11 +26,10 @@ $request = function (string $method, string $url) use ($browser, $loop): void {
     $body = $loop->await(Stream\buffer($stream));
 
     var_dump(\sprintf(
-        '%s %s; Status: %d; Body length: %d',
+        '%s %s; Status: %d;',
         $method,
         $url,
-        $response->getStatusCode(),
-        \strlen($body)
+        $response->getStatusCode()
     ));
 };
 
