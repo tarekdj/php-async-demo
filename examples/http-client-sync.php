@@ -11,7 +11,6 @@ $client = new NativeHttpClient();
 foreach(['https://reactphp.org', 'https://google.com', 'https://www.php.net'] as $url) {
 
     $response = $client->request(METHOD, $url);
-    $body = $response->getContent();
 
     var_dump(\sprintf(
         '%s %s; Status: %d;',

@@ -23,8 +23,6 @@ $request = function (string $method, string $url) use ($browser, $loop): void {
     /** @var ReadableStreamInterface $stream */
     $stream = $response->getBody();
 
-    $body = $loop->await(Stream\buffer($stream));
-
     var_dump(\sprintf(
         '%s %s; Status: %d;',
         $method,
